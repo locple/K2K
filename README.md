@@ -1,7 +1,7 @@
 # Gõ tiếng Việt bằng K2K (Key Combination II)
 
 Tổ hợp phím có nghĩa là **nhấn đồng thời** 2 hay nhiều phím, để xuất ra mỗi lần một chữ cái tiếng Việt có đầy đủ dấu *(không gõ tuần tự từng phím như các phương pháp khác)*
-- Mỗi chữ cái Â,Ă,Ê,Ư,Ơ,Ô,Đ được gõ bằng cách **dùng 2 ngón tay** để nhấn cùng lúc với phím kế bên như hình dưới.
+- Mỗi chữ cái Â,Ă,Ê,Ư,Ơ,Ô,Đ được gõ bằng cách **dùng 2 ngón tay** (ngón trỏ và ngón giữa) để nhấn cùng lúc với phím kế bên như hình dưới.
 - Nếu chữ cái có dấu thanh thì cùng lúc đó phải nhấn thêm một trong các phím bất kỳ ở hàng tương ứng với dấu cần gõ.
 
 Phương pháp này cho phép gõ xen kẽ tiếng Việt và tiếng Anh rất tiện lợi.
