@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>VietK2K Input Method</title><style></style></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="phuocloc@gmail.com" />
+<body>
+    <h1>Gõ tiếng Việt bằng phương pháp K2K</h1>
+    <p><label><b>Nhấn đồng thời</b> tổ hợp phím để xuất ra mỗi lần một chữ cái tiếng Việt có đầy đủ dấu <i>(không gõ tuần tự từng phím)</i></label></p>
+    <ul><li>Mỗi chữ cái Â,Ă,Ê,Ư,Ơ,Ô,Đ được gõ bằng cách nhấn cùng lúc 2 phím lân cận như hình dưới.</li>
+    <li>Nếu chữ cái có dấu thanh thì cùng lúc đó phải nhấn thêm một trong các phím bất kỳ ở hàng tương ứng với dấu cần gõ.</li></ul>
+    <img src="k2k_keyboard_layout.jpg" alt="Quy ước tổ hợp phím K2K" width="800" height="300">
+    <p><textarea id="userInput" rows="15" cols="100" onpaste="return false" spellcheck="false"></textarea></p>
+    <p><label>&#169; 2024 <b>Lê Phước Lộc</b> <i>(phuocloc@gmail.com)</i></label></p>
+    <script type="text/javascript" src="vietk2k.js"></script>
+    <script>
+        var textArea = document.getElementById("userInput");
+
+        // Attach VietKK with textArea element
+        var vKK = new VietK2K();
+        vKK.attach(textArea);
+    </script>
+</body>
+</html>
