@@ -4,7 +4,7 @@ Tổ hợp phím có nghĩa là **nhấn đồng thời** 2 hay nhiều phím, �
 - Mỗi chữ cái **Â,Ă,Ê,Ư,Ơ,Ô,Đ** được gõ bằng cách **dùng 2 ngón tay** *(ngón trỏ và ngón giữa)* để nhấn như hình dưới.
 - Nếu chữ cái có **dấu thanh** thì cùng lúc đó **dùng ngón khác** *(chọn tay nào thuận tiện)* nhấn thêm một phím bất kỳ ở hàng tương ứng với dấu cần gõ (như hình).
 
-Phương pháp này cho phép gõ xen kẽ tiếng Việt và tiếng Anh rất tiện lợi.
+Phương pháp này cho phép gõ tiếng Việt và tiếng Anh (hay các thứ tiếng khác) trộn lẫn một cách tiện lợi mà không cần phải tắt chế độ gõ tiếng Việt.
 # Hướng dẫn gõ trên bàn phím QWERTY:
 <img src="k2k_keyboard_layout.jpg" width="800" height="400"/>
 
