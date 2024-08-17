@@ -9,7 +9,7 @@ Phương pháp này cho phép gõ tiếng Việt và tiếng Anh (hay các thứ
 <img src="k2k_keyboard_layout.jpg" width="800" height="400"/>
 
 # Minh họa cách nhúng VietK2K vào trang web:
-Chương trình vietk2k.js dùng để tích hợp phương pháp gõ K2K vào các TextBox, TextArea trên trình duyệt web (đã test trên MS Edge).
+Chương trình **vietk2k.js** dùng để tích hợp phương pháp gõ K2K vào các TextBox, TextArea trên trình duyệt web (đã test trên MS Edge).
 ```javascript
 <script type="text/javascript" src="vietk2k.js"></script>
 <script>
@@ -18,6 +18,6 @@ Chương trình vietk2k.js dùng để tích hợp phương pháp gõ K2K vào c
     vKK.attach(textArea);
 </script>
 ```
-Tham khảo file example.html
+Tham khảo file **example.html**
 
 © 2024 **Lê Phước Lộc** *(phuocloc@gmail.com)*
