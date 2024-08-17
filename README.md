@@ -19,5 +19,7 @@ Chương trình **vietk2k.js** dùng để tích hợp phương pháp gõ K2K v�
 </script>
 ```
 Tham khảo file **example.html**
+> [!IMPORTANT]
+**Phải TẮT các kiểu gõ khác như TELEX, VNI** khi gõ bằng phương pháp K2K.
 
 © 2024 **Lê Phước Lộc** *(phuocloc@gmail.com)*
