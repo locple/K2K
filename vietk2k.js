@@ -7,17 +7,17 @@
 function VietK2K() {		// Class VietK2K
     this.mode = true;		// mode: 1=K2K (default), 0=off
     this.k2k = {			// K2K keys: unordered list of keys used in K2K combinations
-        65: false,  83: false,  87: false,  69: false,				// A,S,W,E combinations for a, â, ă, e, ê vowels
+        65: false,  83: false,  87: false,  69: false,			// A,S,W,E combinations for a, â, ă, e, ê vowels
         89: false,  85: false,  73: false,  79: false, 80: false,	// Y,U,I,O,P combinations for u, ư, o, ơ, ô vowels
-        68: false,  70: false,										// D,F, combinations for đ consonant
+        68: false,  70: false,						// D,F, combinations for đ consonant
         67: false,  88: false,  71: false,  72: false, 66: false,	// C,X, G,H, F,G, G,B combinations for ch,gh,gi,gì consonants
         75: false,  76: false,  78: false,  77: false, 74: false,	// K,L, N,M, N,J combinations for kh,ng,nh consonants
-        188: false, 190: false, 219: false,							// M,'.',',', P,[ combinations for ngh,ph consonants
-        81: false,  84: false,  82: false,							// Q,W, T,R,H combinations for qu,tr,th consonants
-        32: false,													// with Space for dot tone
-        90: false,  86: false,										// with one key of Z,X,C,V,B,N,M for grave tone
-        															// with one key of D,F,G,H,J,K,L for acute tone
-        															// with one key of Q,R,T for question tone
+        188: false, 190: false, 219: false,				// M,'.',',', P,[ combinations for ngh,ph consonants
+        81: false,  84: false,  82: false,				// Q,W, T,R,H combinations for qu,tr,th consonants
+        32: false,							// with Space for dot tone
+        90: false,  86: false,						// with one key of Z,X,C,V,B,N,M for grave tone
+        								// with one key of D,F,G,H,J,K,L for acute tone
+        								// with one key of Q,R,T for question tone
         48: false,  49: false,  50: false,  51: false, 52: false,	// with one key of 0,1,2,3,4,
         53: false,  54: false,  55: false,  56: false, 57: false	// 5,6,7,8,9 for tilde tone
       };
@@ -170,12 +170,12 @@ VietK2K.prototype.keyToCode = function(key) {
     var keyCode;
 
     if (key > 96 && key < 123)		// a ... z
-        keyCode = key - 32;			// -> A ... Z
-    else if (key == 44)				// ,
+        keyCode = key - 32;		// -> A ... Z
+    else if (key == 44)			// ,
         keyCode = 188;
-    else if (key == 46)				// .
+    else if (key == 46)			// .
         keyCode = 190;
-    else if (key == 91)				// [
+    else if (key == 91)			// [
         keyCode = 219;
     else
         keyCode = key;
@@ -188,11 +188,11 @@ VietK2K.prototype.codeToKey = function(keyCode, caseIdx) {
 
     if (keyCode > 64 && keyCode < 91)	// A ... Z
         key = keyCode + (caseIdx > 0 ? 0 : 32);
-    else if (keyCode == 188)
+    else if (keyCode == 188)		// ,
         key = (caseIdx == 1 ? 60 : 44);
-    else if (keyCode == 190)
+    else if (keyCode == 190)		// .
         key = (caseIdx == 1 ? 62 : 46);
-    else if (keyCode == 219)
+    else if (keyCode == 219)		// [
         key = (caseIdx == 1 ? 123 : 91);
     else
         key = keyCode;
@@ -240,20 +240,20 @@ VietK2K.prototype.printConsonant = function(letterIdx, caseIdx) {		// Print cons
 }
 
 VietK2K.prototype.getVowelIndex = function() {
-    if (this.k2k[65]  && !this.k2k[83] && !this.k2k[87])					return 0;	// a
-    if (this.k2k[65]  &&  this.k2k[83] && !this.k2k[87])					return 1;	// â	<= as | sa
-    if (this.k2k[65]  && !this.k2k[83] &&  this.k2k[87])					return 2;	// ă	<= aw | wa
-    if (this.k2k[69]  && !this.k2k[87])										return 3;	// e
-    if (this.k2k[69]  &&  this.k2k[87])										return 4;	// ê	<= ew | we
-    if (this.k2k[85]  && !this.k2k[73])										return 5;	// u
-    if (!this.k2k[85] &&  this.k2k[73] && !this.k2k[79])					return 6;	// i
-    if (this.k2k[85]  &&  this.k2k[73] && !this.k2k[79])					return 7;	// ư	<= ui | iu
+    if (this.k2k[65]  && !this.k2k[83] && !this.k2k[87])			return 0;	// a
+    if (this.k2k[65]  &&  this.k2k[83] && !this.k2k[87])			return 1;	// â	<= as | sa
+    if (this.k2k[65]  && !this.k2k[83] &&  this.k2k[87])			return 2;	// ă	<= aw | wa
+    if (this.k2k[69]  && !this.k2k[87])						return 3;	// e
+    if (this.k2k[69]  &&  this.k2k[87])						return 4;	// ê	<= ew | we
+    if (this.k2k[85]  && !this.k2k[73])						return 5;	// u
+    if (!this.k2k[85] &&  this.k2k[73] && !this.k2k[79])			return 6;	// i
+    if (this.k2k[85]  &&  this.k2k[73] && !this.k2k[79])			return 7;	// ư	<= ui | iu
     if (!this.k2k[85] &&  this.k2k[73] &&  this.k2k[79] && !this.k2k[80])	return 8;	// ơ	<= io | oi
     if (this.k2k[85]  &&  this.k2k[73] &&  this.k2k[79] && !this.k2k[80])	return 9;	// ươ	<= uio | *
     if (!this.k2k[85] &&  this.k2k[73] &&  this.k2k[79] &&  this.k2k[80])	return 10;	// uô	<= iop | *
-    if (!this.k2k[73] &&  this.k2k[79] && !this.k2k[80])					return 11;	// o
-    if (!this.k2k[73] &&  this.k2k[79] &&  this.k2k[80])					return 12;	// ô	<= op | po
-    if (this.k2k[89])														return 13;	// y
+    if (!this.k2k[73] &&  this.k2k[79] && !this.k2k[80])			return 11;	// o
+    if (!this.k2k[73] &&  this.k2k[79] &&  this.k2k[80])			return 12;	// ô	<= op | po
+    if (this.k2k[89])								return 13;	// y
  
     return -1;	// no vowel detected
 };
@@ -265,7 +265,7 @@ VietK2K.prototype.getConsonantIndex = function() {
     if (this.k2k[75]  &&  this.k2k[76])						return 3;	// kh	<= kl | lk
     if (this.k2k[78]  &&  this.k2k[77])						return 4;	// ng	<= nm | mn
     if (this.k2k[78]  &&  this.k2k[74])						return 5;	// nh	<= nj | jn
-    if (this.k2k[77]  &&  this.k2k[188]  &&  this.k2k[190])	return 6;	// ngh	<= m,. | *
+    if (this.k2k[77]  &&  this.k2k[188]  &&  this.k2k[190])			return 6;	// ngh	<= m,. | *
     if (this.k2k[80]  &&  this.k2k[219])					return 7;	// ph	<= p[ | [p
     if (this.k2k[81]  &&  this.k2k[87])						return 8;	// qu	<= qw | wq
     if (this.k2k[84]  &&  this.k2k[82])						return 9;	// tr	<= tr | rt
@@ -282,11 +282,11 @@ VietK2K.prototype.getToneIndex = function() {
     if (this.k2k[90] || this.k2k[88] || this.k2k[67] || this.k2k[86] ||
         this.k2k[66] || this.k2k[78] || this.k2k[77])	return 2;	// grave (huyền) <= Z | X | C | V | B | N | M
     if (this.k2k[32])
-														return 3;	// dot (nặng) <= Space bar
+							return 3;	// dot (nặng) <= Space bar
     if (this.k2k[81] || this.k2k[82] || this.k2k[84])
-														return 4;	// question	(hỏi) <= Q | R | T
+							return 4;	// question (hỏi) <= Q | R | T
     for (let i = 48; i < 58; i++)
-        if (this.k2k[i])								return 5;	// tilde (ngã) <= 0 | ... | 9
+        if (this.k2k[i])				return 5;	// tilde (ngã) <= 0 | ... | 9
 
     return 0;	// no tone detected
 };
