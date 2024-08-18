@@ -1,6 +1,6 @@
 /**
  * K2K (Key Combinations II) - A Vietnamese input method by Le Phuoc Loc
- * K2K Input Editor v1.0 - K2K Implementation for TextBox/TextArea elements in browsers
+ * K2K Input Editor v1.1 - K2K Implementation for TextBox/TextArea elements in browsers
  * Created on Aug-16-2024 by Le Phuoc Loc: https://github.com/locple/VietK2K
  */
 
@@ -10,12 +10,12 @@ function VietK2K() {		// Class VietK2K
         65: false,  83: false,  87: false,  69: false,				// A,S,W,E combinations for a, â, ă, e, ê vowels
         89: false,  85: false,  73: false,  79: false, 80: false,	// Y,U,I,O,P combinations for u, ư, o, ơ, ô vowels
         68: false,  70: false,										// D,F, combinations for đ consonant
-        67: false,  88: false,  71: false,  72: false,				// C,X, G,H, F,G combinations for ch,gh,gi consonants
+        67: false,  88: false,  71: false,  72: false, 66: false,	// C,X, G,H, F,G, G,B combinations for ch,gh,gi,gì consonants
         75: false,  76: false,  78: false,  77: false, 74: false,	// K,L, N,M, N,J combinations for kh,ng,nh consonants
         188: false, 190: false, 219: false,							// M,'.',',', P,[ combinations for ngh,ph consonants
         81: false,  84: false,  82: false,							// Q,W, T,R,H combinations for qu,tr,th consonants
         32: false,													// with Space for dot tone
-        90: false,  86: false,  66: false,							// with one key of Z,X,C,V,B,N,M for grave tone
+        90: false,  86: false,										// with one key of Z,X,C,V,B,N,M for grave tone
         															// with one key of D,F,G,H,J,K,L for acute tone
         															// with one key of Q,R,T for question tone
         48: false,  49: false,  50: false,  51: false, 52: false,	// with one key of 0,1,2,3,4,
@@ -46,7 +46,6 @@ VietK2K.Consonants = [	// All Vietnamese consonant/double consonant letters to r
         ["đ", "Đ", "Đ"],
         ["ch", "Ch", "CH"],
         ["gh", "Gh", "GH"],
-        ["gi", "Gi", "GI"],
         ["kh", "Kh", "KH"],
         ["ng", "Ng", "NG"],
         ["nh", "Nh", "NH"],
@@ -54,7 +53,9 @@ VietK2K.Consonants = [	// All Vietnamese consonant/double consonant letters to r
         ["ph", "Ph", "PH"],
         ["qu", "Qu", "QU"],
         ["tr", "Tr", "TR"],
-        ["th", "Th", "TH"]
+        ["th", "Th", "TH"],
+        ["gi", "Gi", "GI"],
+        ["gì", "Gì", "GÌ"]
       ];
 
 VietK2K.prototype.setMode = function(mode) {		// Enable or disable K2K method
@@ -258,18 +259,19 @@ VietK2K.prototype.getVowelIndex = function() {
 };
 
 VietK2K.prototype.getConsonantIndex = function() {
-   if (this.k2k[68]  &&  this.k2k[70])						return 0;	// đ	<= df | fd
-   if (this.k2k[67]  &&  this.k2k[88])						return 1;	// ch	<= cx | xc
-   if (this.k2k[71]  &&  this.k2k[72])						return 2;	// gh	<= gh | hg
-   if (this.k2k[70]  &&  this.k2k[71])						return 3;	// gi	<= fg | gf
-   if (this.k2k[75]  &&  this.k2k[76])						return 4;	// kh	<= kl | lk
-   if (this.k2k[78]  &&  this.k2k[77])						return 5;	// ng	<= nm | mn
-   if (this.k2k[78]  &&  this.k2k[74])						return 6;	// nh	<= nj | jn
-   if (this.k2k[77]  &&  this.k2k[188]  &&  this.k2k[190])	return 7;	// ngh	<= m,. | *
-   if (this.k2k[80]  &&  this.k2k[219])						return 8;	// ph	<= p[ | [p
-   if (this.k2k[81]  &&  this.k2k[87])						return 9;	// qu	<= qw | wq
-   if (this.k2k[84]  &&  this.k2k[82])						return 10;	// tr	<= tr | rt
-   if (this.k2k[84]  &&  this.k2k[72])						return 11;	// th	<= th | ht
+    if (this.k2k[68]  &&  this.k2k[70])						return 0;	// đ	<= df | fd
+    if (this.k2k[67]  &&  this.k2k[88])						return 1;	// ch	<= cx | xc
+    if (this.k2k[71]  &&  this.k2k[72])						return 2;	// gh	<= gh | hg
+    if (this.k2k[75]  &&  this.k2k[76])						return 3;	// kh	<= kl | lk
+    if (this.k2k[78]  &&  this.k2k[77])						return 4;	// ng	<= nm | mn
+    if (this.k2k[78]  &&  this.k2k[74])						return 5;	// nh	<= nj | jn
+    if (this.k2k[77]  &&  this.k2k[188]  &&  this.k2k[190])	return 6;	// ngh	<= m,. | *
+    if (this.k2k[80]  &&  this.k2k[219])					return 7;	// ph	<= p[ | [p
+    if (this.k2k[81]  &&  this.k2k[87])						return 8;	// qu	<= qw | wq
+    if (this.k2k[84]  &&  this.k2k[82])						return 9;	// tr	<= tr | rt
+    if (this.k2k[84]  &&  this.k2k[72])						return 10;	// th	<= th | ht
+    if (this.k2k[71]  &&  this.k2k[70])						return 11;	// gi	<= gf | fg
+    if (this.k2k[71]  &&  this.k2k[66])						return 12;	// gì	<= gb | bg
 
     return -1;	// no consonant detected
 }
