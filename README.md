@@ -8,7 +8,7 @@ Phương pháp này cho phép gõ tiếng Việt và tiếng Anh (hay các thứ
 # Hướng dẫn gõ trên bàn phím QWERTY:
 <img src="k2k_keyboard_layout.jpg" width="800" height="400"/>
 
-# Online Demo: https://k2.ai.vn/k2k
+# Online Demo: [k2.ai.vn/k2k](https://k2.ai.vn/k2k)
 
 # Minh họa cách nhúng VietK2K vào trang web:
 Chương trình **vietk2k.js** dùng để tích hợp phương pháp gõ K2K vào các TextBox, TextArea trên trình duyệt web (đã test trên MS Edge).
