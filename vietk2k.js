@@ -36,14 +36,14 @@ VietK2K.Vowels = [	// Array of Vietnamese vowels, column index locate the vowel 
       ];
 
 VietK2K.VowelKeys = [	// Key codes to type the corresponding letters in the Vowels array. Tones typed separately after the base letter.
-        [[],			[81, 83],	[81, 87],	[65, 83]],		// (A   -> a),  (QS, QW, AS -> 6 tones)
+        [[],			[65, 87],	[81, 87],	[65, 83]],		// (A   -> a),  (AW, QW, AS -> 6 tones)
         [[],			[69, 70],	[69, 82],	[68, 70]],		// (E   -> e),  (EF, ER, DF -> 6 tones)
         [[],			[75, 79],	[73, 79],	[75, 76]],		// (I   -> i),  (KO, IO, KL -> 6 tones)
         [[],			[76, 80],	[79, 80],	[76, 186]],		// (O   -> o),  (LP, OP, L; -> 6 tones)
         [[],			[74, 73],	[85, 73],	[74, 75]],		// (U   -> u),  (JI, UI, JK -> 6 tones)
         [[],			[72, 85],	[85, 89],	[72, 74]],		// (Y   -> y),  (HU, YU, HJ -> 6 tones)
-        [[65, 83],		[81, 83],	[81, 87],	[65, 83]],		// (AS  -> â),  (QS, QW, AS -> 6 tones)
-        [[65, 87],		[81, 83],	[81, 87],	[65, 83]],		// (AW  -> ă),  (QS, QW, AS -> 6 tones)
+        [[65, 83],		[65, 87],	[81, 87],	[65, 83]],		// (AS  -> â),  (AW, QW, AS -> 6 tones)
+        [[65, 87],		[65, 87],	[81, 87],	[65, 83]],		// (AW  -> ă),  (AW, QW, AS -> 6 tones)
         [[69, 82],		[69, 70],	[69, 82],	[68, 70]],		// (ER  -> ê),  (EF, ER, DF -> 6 tones)
         [[73, 79, 80],	[],			[],			[]],			// (IOP -> ươ), tones given after ơ vowel
         [[85, 73],		[74, 73],	[85, 73],	[74, 75]],		// (UI  -> ư),  (JI, UI, JK -> 6 tones)
